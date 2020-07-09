@@ -9,23 +9,30 @@ def pedirDatos():
     return lista
 
 def burbuja(lista):
+    cont=0
+    ordenado=False
     tamano=len(lista)
     for _ in range(0,tamano):
+        if ordenado==True:
+            break
         for j in range(0,tamano-1):
+            ordenado=True
+            cont=cont+1
             if lista[j]>lista[j+1]:
+                ordenado=False
                 aux=lista[j]
                 lista[j]=lista[j+1]
                 lista[j+1]=aux
-    return lista
-def mostrarLista(lista):
+    return lista,cont
+def mostrarLista(lista,cont):
     tam=len(lista)
-    print("Humano aqui esta tu piche lista ordenada de forma acendente:")
+    print(f"Humano aqui esta tu piche lista ordenada en {cont} ciclos de forma acendente:")
     for i in range(0,tam):
         print(f"{lista[i]}")
-    print("Humano aqui esta tu piche lista ordenada de forma desendente:")
+    print(f"Humano aqui esta tu piche lista ordenada en {cont} ciclos de forma desendente:")
     for i in range(tam,0,-1):
         print(f"{lista[i-1]}")
 
 lista=pedirDatos()
-lista=burbuja(lista)
-mostrarLista(lista)
+lista,cont=burbuja(lista)
+mostrarLista(lista,cont)
