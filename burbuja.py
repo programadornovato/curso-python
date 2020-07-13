@@ -12,10 +12,11 @@ def burbuja(lista):
     cont=0
     ordenado=False
     tamano=len(lista)
+    comparaciones=tamano
     for _ in range(0,tamano):
         if ordenado==True:
             break
-        for j in range(0,tamano-1):
+        for j in range(0,comparaciones-1):
             ordenado=True
             cont=cont+1
             if lista[j]>lista[j+1]:
@@ -23,6 +24,7 @@ def burbuja(lista):
                 aux=lista[j]
                 lista[j]=lista[j+1]
                 lista[j+1]=aux
+        comparaciones=comparaciones-1
     return lista,cont
 def mostrarLista(lista,cont):
     tam=len(lista)
