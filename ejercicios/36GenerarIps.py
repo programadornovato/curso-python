@@ -23,8 +23,6 @@ def generarIps(bloque1=0,bloque2=0,bloque3=0,ini=0,fin=0):
 
 generarIps()
 
-for target_list in expression_list:
-    continue
 '''
 for ip in generarIps(192,168,1,5,10):
     print(ip)
