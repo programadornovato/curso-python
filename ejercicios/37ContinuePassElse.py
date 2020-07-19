@@ -27,3 +27,4 @@ while i<len(lista):
 else:
     esAcendente=True
 print("Es acendente:",esAcendente)
+
