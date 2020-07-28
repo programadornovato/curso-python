@@ -1,13 +1,19 @@
 class Auto:
     #Atributos publicos
-    color="Rojo"
-    modelo="2010"
-    marca="Vocho"
+    color=""
+    modelo=""
+    marca=""
     encendido=False
     velocidad=0
     #Atributos privados
-    __llave="123456"
+    __llave=""
     #Metodos publicos
+    def __init__(self,llave,color,modelo,marca):
+        self.__llave=llave
+        self.color=color
+        self.modelo=modelo
+        self.marca=marca
+
     def encender(self,llave):
         if self.__llave==llave:
             self.encendido=True
@@ -28,7 +34,20 @@ class Auto:
     #Metodos privados
     def __enciendeLuzFreno(self):
         print("Luz del freno encendida")
-vocho1=Auto()
+vocho1=Auto("LL123","Blanco","2010","Vocho")
+vocho1.encender("LL123")
+vocho1.acelera()
+vocho1.acelera()
+vocho1.acelera()
+print("Encendido=",vocho1.encendido," Velocidad=",vocho1.velocidad," Color=",vocho1.color)
+
+vocho2=Auto("LL111","Azul","2009","Vocho")
+vocho2.encender("123")
+vocho2.acelera()
+vocho2.acelera()
+vocho2.acelera()
+print("Encendido=",vocho2.encendido," Velocidad=",vocho2.velocidad," Color=",vocho2.color)
+'''
 #vocho1.__enciendeLuzFreno()
 #print(vocho1.__llave)
 vocho1.encender("123456")
@@ -38,3 +57,4 @@ vocho1.acelera()
 vocho1.acelera()
 vocho1.frena()
 print("Encendido=",vocho1.encendido," Velocidad=",vocho1.velocidad)
+'''
