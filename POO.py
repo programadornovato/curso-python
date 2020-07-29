@@ -32,10 +32,23 @@ class Auto:
         if self.encendido==True:
             self.encendido=False
             self.velocidad=0
+            self.corneta(True)
     #Metodos privados
     def __enciendeLuzFreno(self):
         print("Luz del freno encendida")
+    @staticmethod
+    def corneta(precionar=False):
+        if precionar==True:
+            print("La corneta suena")
+        else:
+            print("La corneta no suena")
+#Auto.corneta(True)
+vocho1=Auto("1","rojo","2010","vocho")
+vocho1.encender("1")
+vocho1.corneta(True)
+vocho1.apaga()
 
+'''
 Auto._alto=2
 print(Auto._alto)
 print(Auto._ancho)
@@ -43,3 +56,4 @@ print(Auto._velocidadMaxima)
 vocho1=Auto("1","rojo","2010","vocho")
 print(vocho1.color)
 print(vocho1._alto)
+'''
