@@ -42,12 +42,23 @@ class Auto:
             print("La corneta suena")
         else:
             print("La corneta no suena")
+    @classmethod
+    def canasta(cls,peso):
+        pesoMax=cls._ancho*10
+        if peso<pesoMax:
+            return True
+        else:
+            return False
+#print("La canasta del auto soporta 30Kg",Auto.canasta(30))
+vocho1=Auto("1","rojo","2010","vocho")
+print("La canasta del vocho1 soporta 30Kg",vocho1.canasta(30))
+'''
 #Auto.corneta(True)
 vocho1=Auto("1","rojo","2010","vocho")
 vocho1.encender("1")
 vocho1.corneta(True)
 vocho1.apaga()
-
+'''
 '''
 Auto._alto=2
 print(Auto._alto)
